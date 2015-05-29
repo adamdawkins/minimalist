@@ -1,7 +1,7 @@
 <template name="_index_player">
   <div class="item">
     {{#unless is_current_user}}
-    <div class="right floated compact ui button">Challenge</div>
+    <a href="/challenge/{{_id}}" class="right floated compact ui button">Challenge</a>
     {{/unless}}
     <!-- <img class="ui avatar image" src="/images/avatar/small/justen.jpg"> -->
     <div class="content">

@@ -1,3 +1,31 @@
 <template name="home">
-  <h1>The homepage</h1>
+<div class="twelve wide centered column">
+  <h3>Incoming Challenges</h3>
+  <div class="ui divided list">
+    {{#each incoming_challenges}}
+      <div class="item">
+        <a href="/challenge/{{_id}}" class="right floated compact ui button">Accept</a>
+        <!-- <img class="ui avatar image" src="/images/avatar/small/justen.jpg"> -->
+        <div class="content">
+          <div class="header">{{creator_id}}</div>
+          <p>{{start_date}}</p>
+          <p>{{game_length}}</p>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+  <h3>Sent Challenges</h3>
+  <div class="ui divided list">
+    {{#each sent_challenges}}
+      <div class="item">
+        <!-- <img class="ui avatar image" src="/images/avatar/small/justen.jpg"> -->
+        <div class="content">
+          <div class="header">{{opponent_id}}</div>
+          <p>{{start_date}}</p>
+          <p>{{game_length}}</p>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>
 </template>

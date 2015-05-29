@@ -1,0 +1,36 @@
+<template name="challenges_new">
+<div class="twelve wide centered column">
+  <form class="ui form" action="">
+    <h4 class="dividing header">Opponent</h4>
+    {{#with opponent}}
+    <div class="ui card">
+      <div class="image">
+      </div>
+      <div class="content">
+        <div class="header">{{profile.name}}</div>
+      </div>
+    </div>
+    {{/with}}
+    <h4 class="dividing header">The Rules</h4>
+    <div class="two fields">
+      <div class="field">
+        <label for="">Start Date:</label>
+        <input type="date"  name="start_date"/>
+      </div>
+      <div class="field">
+        <label for="">Game Length
+        </label>
+        <select class="dropdown" name="game_length">
+          {{#each game_lengths}}
+            <option value="{{value}}">{{text}}</option>
+          {{/each}}
+        </select>
+      </div>
+    </div>
+    <div class="ui hidden divider"></div>
+    <button class="ui submit button" type="submit">
+      Challenge {{opponent.profile.name}}
+    </button>
+  </form>     
+</div>
+</template>
