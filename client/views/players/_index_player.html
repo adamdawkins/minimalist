@@ -1,0 +1,11 @@
+<template name="_index_player">
+  <div class="item">
+    {{#unless is_current_user}}
+    <div class="right floated compact ui button">Challenge</div>
+    {{/unless}}
+    <!-- <img class="ui avatar image" src="/images/avatar/small/justen.jpg"> -->
+    <div class="content">
+      <div class="header">{{profile.name}}</div>
+    </div>
+  </div>
+</template>
