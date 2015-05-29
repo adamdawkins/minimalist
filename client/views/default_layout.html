@@ -1,0 +1,16 @@
+<template name="default_layout">
+<div class="ui page grid"><div class="column">
+
+    <div class="ui menu">
+      <a class="item" href="/">
+        <i class="home icon"> </i>
+      </a>
+      <div class="right menu">
+        <div class="item">{{>loginButtons}}</div>
+      </div>
+    </div>
+    <div class="column">
+      {{> Template.dynamic template=main }} 
+  </div></div>
+</div>
+</template>
