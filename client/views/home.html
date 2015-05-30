@@ -3,29 +3,36 @@
   <h3>Incoming Challenges</h3>
   <div class="ui divided list">
     {{#each incoming_challenges}}
-      <div class="item">
-        <a href="/challenge/{{_id}}" class="right floated compact ui button">Accept</a>
-        <!-- <img class="ui avatar image" src="/images/avatar/small/justen.jpg"> -->
-        <div class="content">
-          <div class="header">{{creator_id}}</div>
-          <p>{{start_date}}</p>
-          <p>{{game_length}}</p>
-        </div>
-      </div>
+      {{>_incoming_challenge}}
     {{/each}}
   </div>
   <h3>Sent Challenges</h3>
   <div class="ui divided list">
     {{#each sent_challenges}}
-      <div class="item">
-        <!-- <img class="ui avatar image" src="/images/avatar/small/justen.jpg"> -->
-        <div class="content">
-          <div class="header">{{opponent_id}}</div>
-          <p>{{start_date}}</p>
-          <p>{{game_length}}</p>
-        </div>
-      </div>
+    {{>sent_challenge}}
     {{/each}}
   </div>
 </div>
+</template>
+<template name="sent_challenge">
+  <div class="item">
+    <!-- <img class="ui avatar image" src="/images/avatar/small/justen.jpg"> -->
+    <div class="content">
+      <div class="header">{{opponent.profile.name}}</div>
+      <p>{{start}}</p>
+      <p>{{game_length}}</p>
+    </div>
+  </div>
+</template>
+
+<template name="_incoming_challenge">
+  <div class="item">
+    <a href="/challenge/{{_id}}" id="accept-button" class="right floated compact ui button">Accept</a>
+    <!-- <img class="ui avatar image" src="/images/avatar/small/justen.jpg"> -->
+    <div class="content">
+      <div class="header">{{challenger.profile.name}}</div>
+      <p>{{start}}</p>
+      <p>{{game_length}}</p>
+    </div>
+  </div>
 </template>
